@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-lint",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Load arbitrary ESLint rule into a single namespace",
   "keywords": [
     "eslint",
