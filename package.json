@@ -1,0 +1,33 @@
+{
+  "name": "eslint-plugin-lint",
+  "version": "0.0.0",
+  "description": "Load arbitrary ESLint rule into a single namespace",
+  "keywords": [
+    "eslint",
+    "eslint-plugin"
+  ],
+  "license": "MIT",
+  "author": "Andres Suarez <zertosh@gmail.com>",
+  "files": [
+    "eslint-plugin-lint.js"
+  ],
+  "main": "eslint-plugin-lint.js",
+  "repository": "https://github.com/zertosh/eslint-plugin-lint",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "eslint": "^4.0.0",
+    "jest": "^22.2.1"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/__fixtures__/"
+    ],
+    "watchman": false
+  }
+}
