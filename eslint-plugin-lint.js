@@ -7,12 +7,13 @@ module.exports = {
   rules: {},
 };
 
-const seen = new Set();
+const seen = Object.create(null);
 
 Object.defineProperty(module.exports, 'load', {
-  value: function load(...targets) {
+  value: function load() {
+    const targets = Array.prototype.slice.call(arguments);
     targets.forEach(target => {
-      if (!seen.has(target)) {
+      if (!seen[target]) {
         fs.readdirSync(target)
           .filter(name => name.endsWith('.js'))
           .map(name => path.resolve(target, name))
@@ -20,7 +21,7 @@ Object.defineProperty(module.exports, 'load', {
             const rulename = path.basename(filename, '.js');
             module.exports.rules[rulename] = require(filename);
           });
-        seen.add(target);
+        seen[target] = true;
       }
     });
   },
