@@ -14,11 +14,8 @@ function yarnInstall(cwd) {
 function runESLint(cwd) {
   return child_process.spawnSync(
     'node_modules/.bin/eslint',
-    [
-      'has-bar.js',
-      'has-foo.js',
-    ],
-    {cwd, encoding: 'utf8'},
+    ['.'],
+    {cwd, encoding: 'utf8'}
   );
 }
 
@@ -32,6 +29,7 @@ test('works with eslint 3.x', () => {
   const eslintRet = runESLint(cwd);
   expect(sanitize(eslintRet.stderr)).toMatchSnapshot();
   expect(sanitize(eslintRet.stdout)).toMatchSnapshot();
+  expect(eslintRet.error).toBeUndefined();
 });
 
 test('works with eslint 4.x', () => {
@@ -44,4 +42,5 @@ test('works with eslint 4.x', () => {
   const eslintRet = runESLint(cwd);
   expect(sanitize(eslintRet.stderr)).toMatchSnapshot();
   expect(sanitize(eslintRet.stdout)).toMatchSnapshot();
+  expect(eslintRet.error).toBeUndefined();
 });

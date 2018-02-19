@@ -5,10 +5,10 @@ exports[`works with eslint 3.x 1`] = `""`;
 exports[`works with eslint 3.x 2`] = `
 "
 /__fixtures__/eslint-3/has-bar.js
-  1:1  error  Has \\"bar\\"  lint/no-bar
+  1:1  error  Has \\"BAR\\"  lint/no-bar
 
 /__fixtures__/eslint-3/has-foo.js
-  1:1  warning  Has \\"foo\\"  lint/no-foo
+  1:1  warning  Has \\"FOO\\"  lint/no-foo
 
 ✖ 2 problems (1 error, 1 warning)
 
@@ -20,10 +20,10 @@ exports[`works with eslint 4.x 1`] = `""`;
 exports[`works with eslint 4.x 2`] = `
 "
 /__fixtures__/eslint-4/has-bar.js
-  1:1  error  Has \\"bar\\"  lint/no-bar
+  1:1  error  Has \\"BAR\\"  lint/no-bar
 
 /__fixtures__/eslint-4/has-foo.js
-  1:1  warning  Has \\"foo\\"  lint/no-foo
+  1:1  warning  Has \\"FOO\\"  lint/no-foo
 
 ✖ 2 problems (1 error, 1 warning)
 

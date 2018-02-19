@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`eslint-plugin-lint is lint clean 1`] = `""`;
+
+exports[`eslint-plugin-lint is lint clean 2`] = `""`;

@@ -1,16 +1,17 @@
 module.exports = context => {
-  const sourceCode = context.getSourceCode();
   return {
-    Program(node) {
-      const source = sourceCode.text;
-      if (/foo/.test(source)) {
-        context.report({
-          node,
-          message: 'Has "foo"',
+    Program() {
+      context
+        .getSourceCode()
+        .getAllComments()
+        .forEach(commentNode => {
+          if (/\b(FOO)\b/.test(commentNode.value)) {
+            context.report({
+              node: commentNode,
+              message: 'Has "FOO"',
+            });
+          }
         });
-      }
     },
   };
 };
-
-// module.exports.schema = [];
